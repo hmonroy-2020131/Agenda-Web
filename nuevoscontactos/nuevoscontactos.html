@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nuevo Contacto</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('https://www.xtrafondos.com/wallpapers/casa-kame-de-dragon-ball-3963.jpg'); background-size: cover; background-position: center;">
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-end mb-4">
+            <a href="../contactos/contactos.html" class="btn btn-warning btn-lg">Regresar</a>
+        </div>
+        <div class="card">
+            <div class="card-header text-center bg-warning text-white">
+                <h2 class="font-weight-bold" style="font-size: 2.5em;">Nuevo Contacto</h2>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Introduce el nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Introduce tu apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" class="form-control" id="telefono" placeholder="Introduce el teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Introduce el correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Direccion">Direccion:</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Introduce tu direccion" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-block">Agregar Contacto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
