@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Contactos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('https://www.xtrafondos.com/wallpapers/casa-kame-de-dragon-ball-3963.jpg'); background-size: cover; background-position: center;">
     
+    <div class="container mt-4">
+        <div class="d-flex justify-content-end mb-4">
+            <a href="../contactos/contactos.html" class="btn btn-warning btn-lg">Regresar</a>
+        </div>
+        <h2 class="text-center text-warning" style="font-weight: bold; font-size: 2.5em;">Lista de Contactos favoritos</h2>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="modal" data-target="#contactModal4">
+                <span>Cole Cassidy</span>
+                <button class="btn btn-warning btn-sm">Ver detalles</button>
+            </li>
+            <div class="modal fade" id="contactModal4" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel4" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="contactModalLabel4">Detalles del Contacto</h5>
+                            <button type="button" class="close btn btn-warning" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Nombre:</strong> Cole</p>
+                            <p><strong>Apellido:</strong> Cassidy</p>
+                            <p><strong>Teléfono:</strong> 444-123-987</p>
+                            <p><strong>Correo:</strong> cole@gmail.com</p>
+                            <p><strong>Direccion:</strong> Guatemala</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="modal" data-target="#contactModal5">
+                <span>Vincent Fabron</span>
+                <button class="btn btn-warning btn-sm">Ver detalles</button>
+            </li>
+            <div class="modal fade" id="contactModal5" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel5" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="contactModalLabel5">Detalles del Contacto</h5>
+                            <button type="button" class="close btn btn-warning" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Nombre:</strong> Vincent</p>
+                            <p><strong>Apellido:</strong> Fabron</p>
+                            <p><strong>Teléfono:</strong> 333-654-789</p>
+                            <p><strong>Correo:</strong> vincent@gmail.com</p>
+                            <p><strong>Direccion:</strong> Guatemala</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
