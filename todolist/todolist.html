@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Pendientes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('https://www.xtrafondos.com/wallpapers/casa-kame-de-dragon-ball-3963.jpg'); background-size: cover; background-position: center;">
+  <div class="container mt-5">
+    <a href="../perfildeusuario/perfildeusuario.html" class="btn btn-warning btn-lg">Regresar</a>
+    <h1 class="text-center text-warning" style="font-weight: bold; font-size: 2.5em;"">Lista de Pendientes</h1>
+    <div class="mb-4">
+      <input type="text" id="taskInput" class="form-control" placeholder="Nueva tarea" />
+      <input type="number" id="priorityInput" class="form-control mt-2" placeholder="Prioridad (1-10)" min="1" max="10" />
+      <button id="addTaskBtn" class="btn btn-warning mt-2">Agregar Tarea</button>
+    </div>
+    <ul id="taskList" class="list-group">
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    let tasks = [];
+    function addTask() {
+      const taskInput = document.getElementById('taskInput').value;
+      const priorityInput = document.getElementById('priorityInput').value;
+
+      if (taskInput && priorityInput) {
+        const task = {
+          id: Date.now(),
+          text: taskInput,
+          priority: parseInt(priorityInput),
+        };
+
+        tasks.push(task);
+        tasks.sort((a, b) => a.priority - b.priority);
+        renderTasks();
+        
+        document.getElementById('taskInput').value = '';
+        document.getElementById('priorityInput').value = '';
+      } else {
+        alert('Por favor, ingrese una tarea y una prioridad.');
+      }
+    }
+    function deleteTask(taskId) {
+      tasks = tasks.filter(task => task.id !== taskId);
+      renderTasks();
+    }
+
+    function editTask(taskId) {
+      const task = tasks.find(task => task.id === taskId);
+      const newText = prompt('Editar tarea:', task.text);
+      const newPriority = prompt('Nueva prioridad:', task.priority);
+
+      if (newText !== null && newPriority !== null) {
+        task.text = newText;
+        task.priority = parseInt(newPriority);
+        tasks.sort((a, b) => a.priority - b.priority);
+        renderTasks();
+      }
+    }
+    function renderTasks() {
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = ''; 
+
+      tasks.forEach(task => {
+        const li = document.createElement('li');
+        li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        
+        li.innerHTML = `
+          ${task.text} - Prioridad: ${task.priority}
+          <div>
+            <button class="btn btn-warning btn-sm mx-1" onclick="editTask(${task.id})">Editar</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteTask(${task.id})">Eliminar</button>
+          </div>
+        `;
+        
+        taskList.appendChild(li);
+      });
+    }
+    document.getElementById('addTaskBtn').addEventListener('click', addTask);
+  </script>
+</body>
+</html>
